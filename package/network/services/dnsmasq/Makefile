@@ -48,18 +48,18 @@ define Package/dnsmasq/Default
   USERID:=dnsmasq=453:dnsmasq=453
 endef
 
-#define Package/dnsmasq
-#$(call Package/dnsmasq/Default)
-#  VARIANT:=nodhcpv6
-#endef
+define Package/dnsmasq
+$(call Package/dnsmasq/Default)
+  VARIANT:=nodhcpv6
+endef
 
-#define Package/dnsmasq-dhcpv6
-#$(call Package/dnsmasq/Default)
-#  TITLE += (with DHCPv6 support)
-#  DEPENDS+=@IPV6
-#  VARIANT:=dhcpv6
-#  PROVIDES:=dnsmasq
-#endef
+define Package/dnsmasq-dhcpv6
+$(call Package/dnsmasq/Default)
+  TITLE += (with DHCPv6 support)
+  DEPENDS+=@IPV6
+  VARIANT:=dhcpv6
+  PROVIDES:=dnsmasq
+endef
 
 define Package/dnsmasq-full
 $(call Package/dnsmasq/Default)
